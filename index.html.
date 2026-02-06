@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Sala do Futuro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="login-box">
+    <h1>🔐 Sala do Futuro</h1>
+
+    <input type="text" id="usuario" placeholder="Email ou RA">
+    <input type="password" id="senha" placeholder="Senha">
+
+    <button onclick="login()">Entrar</button>
+
+    <p id="erro"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
