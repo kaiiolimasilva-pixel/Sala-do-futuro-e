@@ -1,0 +1,34 @@
+// DADOS FIXOS (você pode mudar)
+const usuarioCorreto = "123456"; // RA ou email
+const senhaCorreta = "123";
+
+// LOGIN
+function login() {
+  const usuario = document.getElementById("usuario").value;
+  const senha = document.getElementById("senha").value;
+  const erro = document.getElementById("erro");
+
+  if (usuario === usuarioCorreto && senha === senhaCorreta) {
+    localStorage.setItem("logado", "true");
+    localStorage.setItem("usuario", usuario);
+    window.location.href = "dashboard.html";
+  } else {
+    erro.innerText = "Usuário ou senha incorretos ❌";
+  }
+}
+
+// PROTEÇÃO DA PÁGINA LOGADA
+if (window.location.pathname.includes("dashboard.html")) {
+  if (localStorage.getItem("logado") !== "true") {
+    window.location.href = "index.html";
+  } else {
+    document.getElementById("user").innerText =
+      "Usuário: " + localStorage.getItem("usuario");
+  }
+}
+
+// LOGOUT
+function logout() {
+  localStorage.clear();
+  window.location.href = "index.html";
+}
